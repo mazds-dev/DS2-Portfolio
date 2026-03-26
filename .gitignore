@@ -1,0 +1,6 @@
+data/Results.csv
+ds2-env/
+__pycache__/
+.ipynb_checkpoints/
+*.keras
+.sfdx/
