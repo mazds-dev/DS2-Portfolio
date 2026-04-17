@@ -196,5 +196,5 @@ DS2-Portfolio/
 
 # Author
 
-Developed by **Marvin Adorian Zanchi dos Santos**
+Developed by **Marvin Adorian Zanchi dos Santos**  
 BSc in Software Development, 4th-year student at South East Technological University - Carlow Campus
