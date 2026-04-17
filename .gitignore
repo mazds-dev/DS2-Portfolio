@@ -3,4 +3,5 @@ ds2-env/
 __pycache__/
 .ipynb_checkpoints/
 *.keras
+*.pkl
 .sfdx/

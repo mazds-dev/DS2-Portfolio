@@ -1,0 +1,12 @@
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+jupyter
+ipykernel
+tensorflow
+streamlit
+streamlit-drawable-canvas
+pillow
+joblib
