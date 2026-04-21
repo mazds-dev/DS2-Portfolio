@@ -15,17 +15,24 @@ from tensorflow import keras
 
 @st.cache_resource
 def load_digit_model():
-    """Load the trained digit recognition model."""
+    """Load the trained digit recognition model using absolute paths."""
+    # Get the directory where this current script (digit_tab.py) is located
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Define potential locations relative to this script
+    # Since models are in the parent folder 'streamlit/', we use '..'
     paths = [
-        'digit_recognition_model.keras',
-        '../digit_recognition_model.keras',
-        'models/digit_recognition_model.keras',
-        '../models/digit_recognition_model.keras',
-        '../notebooks/digit_recognition_model.keras',
+        os.path.join(current_dir, '..', 'digit_recognition_model.keras'), # Parent folder
+        os.path.join(current_dir, 'digit_recognition_model.keras'),      # Same folder
+        'digit_recognition_model.keras'                                  # Root fallback
     ]
+    
     for path in paths:
         if os.path.exists(path):
-            return keras.models.load_model(path)
+            try:
+                return keras.models.load_model(path)
+            except Exception as e:
+                st.error(f"Error loading model at {path}: {e}")
     return None
 
 
